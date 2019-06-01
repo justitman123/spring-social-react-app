@@ -68,11 +68,12 @@ class App extends Component {
 
         return (
             <div className="app">
-                <div className="app-top-box">
-                    <AppHeader authenticated={this.state.authenticated} onLogout={this.handleLogout}/>
-                </div>
-                <div className="app-body">
-                    <BrowserRouter>
+                <BrowserRouter>
+                    <div className="app-top-box">
+                        <AppHeader authenticated={this.state.authenticated} onLogout={this.handleLogout}/>
+                    </div>
+                    <div className="app-body">
+
                         <Switch>
                             <Route exact path="/" component={Home}></Route>
                             <PrivateRoute path="/profile" authenticated={this.state.authenticated}
@@ -87,8 +88,9 @@ class App extends Component {
                             <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}></Route>
                             <Route component={NotFound}></Route>
                         </Switch>
-                    </BrowserRouter>
-                </div>
+
+                    </div>
+                </BrowserRouter>
                 <Alert stack={{limit: 3}}
                        timeout={3000}
                        position='top-right' effect='slide' offset={65}/>
