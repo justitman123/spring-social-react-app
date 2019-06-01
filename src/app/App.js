@@ -72,8 +72,9 @@ class App extends Component {
                     <div className="app-top-box">
                         <AppHeader authenticated={this.state.authenticated} onLogout={this.handleLogout}/>
                     </div>
+                </BrowserRouter>
+                <BrowserRouter>
                     <div className="app-body">
-
                         <Switch>
                             <Route exact path="/" component={Home}></Route>
                             <PrivateRoute path="/profile" authenticated={this.state.authenticated}
@@ -95,7 +96,8 @@ class App extends Component {
                        timeout={3000}
                        position='top-right' effect='slide' offset={65}/>
             </div>
-        );
+        )
+            ;
     }
 }
 
