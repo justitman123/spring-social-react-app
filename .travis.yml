@@ -13,7 +13,7 @@ deploy:
   provider: elasticbeanstalk
   region: "eu-central-1"
   app: "spring-social-react-app"
-  env: "Docker-env"
+  env: "SpringSocialReactApp-env "
   bucket_name: "elasticbeanstalk-eu-central-1-896540193745"
   bucket_path: "spring-social-react-app"
   on:
