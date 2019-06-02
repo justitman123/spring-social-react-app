@@ -8,3 +8,16 @@ before_install:
 
 script:
   - docker run noxior/social-spring-boot npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-central-1"
+  app: "spring-social-react-app"
+  env: "Docker-env"
+  bucket_name: "elasticbeanstalk-eu-central-1-896540193745"
+  bucket_path: "spring-social-react-app"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
